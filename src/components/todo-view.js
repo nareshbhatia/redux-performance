@@ -3,23 +3,16 @@ import { PropTypes } from 'prop-types';
 
 export class TodoView extends React.Component {
     static propTypes = {
-        todoId: PropTypes.number.isRequired,
-        todoMap: PropTypes.object.isRequired
+        todo: PropTypes.object.isRequired
     };
 
-    shouldComponentUpdate(nextProps) {
-        const { todoId, todoMap } = this.props;
-        const { todoMap: nextTodoMap } = nextProps;
-        return todoMap[todoId] !== nextTodoMap[todoId];
-    }
-
     render() {
-        const { todoId, todoMap } = this.props;
-        console.log('-----> TodoView.render():', todoId);
+        const { todo } = this.props;
+        console.log('-----> TodoView.render():', todo.id);
 
         return (
             <tr>
-                <td >{todoMap[todoId]}</td>
+                <td >{todo.text}</td>
             </tr>
         );
     }

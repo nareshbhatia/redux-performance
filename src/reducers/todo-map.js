@@ -1,14 +1,14 @@
 const initialState = {
-    0: 'Todo 0',
-    1: 'Todo 1',
-    2: 'Todo 2',
-    3: 'Todo 3',
-    4: 'Todo 4',
-    5: 'Todo 5',
-    6: 'Todo 6',
-    7: 'Todo 7',
-    8: 'Todo 8',
-    9: 'Todo 9'
+    0: { id: 0, text: 'Todo 0' },
+    1: { id: 1, text: 'Todo 1' },
+    2: { id: 2, text: 'Todo 2' },
+    3: { id: 3, text: 'Todo 3' },
+    4: { id: 4, text: 'Todo 4' },
+    5: { id: 5, text: 'Todo 5' },
+    6: { id: 6, text: 'Todo 6' },
+    7: { id: 7, text: 'Todo 7' },
+    8: { id: 8, text: 'Todo 8' },
+    9: { id: 9, text: 'Todo 9' }
 };
 
 export const todoMap = (state = initialState, action) => {
@@ -16,7 +16,7 @@ export const todoMap = (state = initialState, action) => {
         case 'CHANGE_TODO':
             return {
                 ...state,
-                [action.todo.id]: action.todo.text
+                [action.todo.id]: action.todo
             };
 
         default:
